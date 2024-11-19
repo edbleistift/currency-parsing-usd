@@ -37,9 +37,11 @@ def get_usd_exchange_rate():
 def save_usd_rate_to_csv(rate):
     today = datetime.now().strftime("%Y-%m-%d")
 
-    file_exists = os.path.isfile("C:\\Users\\eschiller\\Desktop\\currency_exchange_rate\\usd_exchange_rate.csv")
+    file_path = "C:\\Users\\eschiller\\Desktop\\usd_exchange_rate.csv"
 
-    with open("usd_exchange_rate.csv", mode="a", newline="", encoding="utf-8") as file:
+    file_exists = os.path.isfile(file_path)
+
+    with open(file_path, mode="a", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
 
         if not file_exists:
